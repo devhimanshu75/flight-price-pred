@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+        <title>Price Prediction</title>
+    </head>
+    <body style="background-color: rgb(16, 24, 21);">
+        <div style="color: burlywood;">
+            <form action="{{url_for('predict')}}" method="POST">
+                <h1>Flight Price Prediction</h1>
+                <h3>Departure Date</h3><input type="datetime-local" name="Dep_Time" id="Dep_Time" required="required">
+                <h3>Arrival Date</h3><input type="datetime-local" name="Arrival_Time" id="Arrival_Time" required="required">
+                <h3> Source </h3>
+                <select name="Source" id="Source" required="required">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Kolkata">Kolkata</option>
+                    </select>
+                <h3> Destination </h3>
+                <select name="Destination" id="Destination" required="required">
+                        <option value="Delhi">Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Cochin">Cochin</option>
+                        <option value="Kolkata">Kolkata</option>
+                        </select>
+                <h3> Flight type </h3>
+                <select name="stops" required="required">
+                        <option value="0">Non stop</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                </select>
+                <h3>Airline to travel with?</h3>
+                <select name="airline" id="airline" required="required">
+                        <option value="Indigo">Indigo</option>
+                        <option value="Jet Airways">Jet Airways</option>
+                        <option value="Air India">Air India</option>
+                        <option value="Multiple carriers">Multiple carriers</option>
+                        <option value="SpiceJet">SpiceJet</option>
+                        <option value="Vistara">Vistara</option>
+                        <option value="Air Asia">Air Asia</option>
+                        <option value="GoAir">GoAir</option>
+                        <option value="Multiple carriers Premium economy">Multiple carriers Premium economy</option>
+                        <option value="Jet Airways Business">Jet Airways Business</option>
+                        <option value="Vistara Premium economy">Vistara Premium economy</option>
+                        <option value="Trujet">Trujet</option>
+                        </select>
+                        <br><br><br>
+                <input type="submit" value="Submit" class="btn btn-secondary">
+                <br><br><br>
+                <h3>{{prediction_text}}</h3>
+
+            </form>
+
+        </div>
+        <style>
+            body {
+                background-color: gold;
+                text-align: center;
+                padding: 0px;
+            }
+
+            #research {
+
+                font-size: 18px;
+                width: 100px;
+                height: 23px;
+                top: 23px;
+
+            }
+            #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+
+        .navbar {
+                background-color:aquamarine;
+                }
+
+        a {
+                color: #2f7575;
+                        }
+
+        a:hover {
+        color: #6e1d1d;
+        }
+        </style>
+    </body>
+</html>
